@@ -11,7 +11,8 @@ return array(
         'Decision',
         'Activity',
         'Photo',
-        'Education'
+        'Education',
+        'Members'
     ),
 
     // These are various options for the listeners attached to the ModuleManager
