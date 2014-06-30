@@ -36,19 +36,5 @@ return array(
         'template_path_stack' => array(
             'members' => __DIR__ . '/../view/'
         )
-    )/*,
-    'doctrine' => array(
-        'driver' => array(
-            'photo_entities' => array(
-                'class' => 'Doctrine\ORM\Mapping\Driver\AnnotationDriver',
-                'cache' => 'array',
-                'paths' => array(__DIR__ . '/../src/Members/Model/')
-            ),
-            'orm_default' => array(
-                'drivers' => array(
-                    'Members\Model' => 'photo_entities'
-                )
-            )
-        )
-    )*/
+    )
 );
