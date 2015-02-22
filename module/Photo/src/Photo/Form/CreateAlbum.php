@@ -1,13 +1,12 @@
 <?php
 
-namespace User\Form;
+namespace Photo\Form;
 
 use Zend\Form\Form;
 use Zend\InputFilter\InputFilter;
-use Zend\I18n\Translator\TranslatorInterface as Translator;
-use Zend\Authentication\Result;
+use Zend\I18n\Translator\Translator;
 
-class Activate extends Form
+class CreateAlbum extends Form
 {
 
     public function __construct(Translator $translate)
@@ -15,26 +14,26 @@ class Activate extends Form
         parent::__construct();
 
         $this->add(array(
-            'name' => 'password',
-            'type' => 'password',
+            'name' => 'name',
+            'type' => 'text',
             'options' => array(
-                'label' => $translate->translate('Your password')
+                'label' => $translate->translate('Album title')
             )
         ));
 
         $this->add(array(
-            'name' => 'password_verify',
-            'type' => 'password',
+            'name' => 'author',
+            'type' => 'text',
             'options' => array(
-                'label' => $translate->translate('Verify your password')
+                'label' => $translate->translate('Author')
             )
         ));
 
         $this->add(array(
             'name' => 'submit',
             'type' => 'submit',
-            'attributes' => array(
-                'value' => $translate->translate('Activate')
+            'options' => array(
+                'label' => $translate->translate('Create album')
             )
         ));
 
@@ -46,40 +45,30 @@ class Activate extends Form
         $filter = new InputFilter();
 
         $filter->add(array(
-            'name' => 'password',
+            'name' => 'name',
             'required' => true,
             'validators' => array(
                 array('name' => 'not_empty'),
-                array(
-                    'name' => 'string_length',
+                array('name' => 'alnum',
                     'options' => array(
-                        'min' => 8
+                        'allowWhiteSpace' => true
                     )
                 )
             )
         ));
-
         $filter->add(array(
-            'name' => 'password_verify',
+            'name' => 'author',
             'required' => true,
             'validators' => array(
                 array('name' => 'not_empty'),
-                array(
-                    'name' => 'string_length',
+                array('name' => 'alnum',
                     'options' => array(
-                        'min' => 8
-                    )
-                ),
-                array(
-                    'name' => 'identical',
-                    'options' => array(
-                        'token' => 'password'
+                        'allowWhiteSpace' => true
                     )
                 )
-
             )
         ));
-
         $this->setInputFilter($filter);
     }
+
 }
