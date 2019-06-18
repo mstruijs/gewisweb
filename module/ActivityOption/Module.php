@@ -64,7 +64,7 @@ class Module
                 'option_hydrator_calendar_option' => function ($sm) {
                     return new \DoctrineModule\Stdlib\Hydrator\DoctrineObject(
                         $sm->get('activity_doctrine_em'),
-                        'Activity\Model\ActivityCalendarOption'
+                        'Activity\Model\Option'
                     );
                 },
                 'option_hydrator' => function ($sm) {
@@ -73,13 +73,13 @@ class Module
                     );
                 },
                 'option_service_calendar' => function ($sm) {
-                    $ac = new Service\ActivityCalendar();
+                    $ac = new Service\OptionCalendar();
                     $ac->setServiceManager($sm);
 
                     return $ac;
                 },
                 'option_mapper_calendar_option' => function ($sm) {
-                    return new \Activity\Mapper\ActivityCalendarOption(
+                    return new \Activity\Mapper\Option(
                         $sm->get('activity_doctrine_em')
                     );
                 },
