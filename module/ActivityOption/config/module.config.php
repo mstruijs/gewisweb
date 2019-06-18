@@ -9,7 +9,7 @@ return [
                 'options' => [
                     'route' => '/option',
                     'defaults' => [
-                        '__NAMESPACE__' => 'Option\Controller',
+                        '__NAMESPACE__' => 'ActivityOption\Controller',
                     ],
                 ],
                 'child_routes' => [
@@ -40,7 +40,7 @@ return [
     ],
     'controllers' => [
         'invokables' => [
-            'Option\Controller\OptionCalendar' => 'Option\Controller\OptionCalendarController',
+            'ActivityOption\Controller\OptionCalendar' => 'ActivityOption\Controller\OptionCalendarController',
         ],
     ],
     'view_manager' => [
@@ -53,11 +53,11 @@ return [
             'Option\option_entities' => [
                 'class' => 'Doctrine\ORM\Mapping\Driver\AnnotationDriver',
                 'cache' => 'array',
-                'paths' => [__DIR__ . '/../src/Option/Model/']
+                'paths' => [__DIR__ . '/../src/ActivityOption/Model/']
             ],
             'orm_default' => [
                 'drivers' => [
-                    'Option\Model' => 'Option\option_entities'
+                    'ActivityOption\Model' => 'ActivityOption\option_entities'
                 ]
             ]
         ]
