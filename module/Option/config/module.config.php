@@ -34,14 +34,14 @@ return [
     ],
     'doctrine' => [
         'driver' => [
-            'activity_entities' => [
+            'Option\option_entities' => [
                 'class' => 'Doctrine\ORM\Mapping\Driver\AnnotationDriver',
                 'cache' => 'array',
                 'paths' => [__DIR__ . '/../src/Activity/Model/']
             ],
             'orm_default' => [
                 'drivers' => [
-                    'Activity\Model' => 'activity_entities'
+                    'Option\Model' => 'Option\option_entities'
                 ]
             ]
         ]

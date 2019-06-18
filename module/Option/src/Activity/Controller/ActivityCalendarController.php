@@ -1,6 +1,6 @@
 <?php
 
-namespace Activity\Controller;
+namespace Option\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
@@ -17,7 +17,7 @@ class ActivityCalendarController extends AbstractActionController
         if ($request->isPost()) {
             $createdOption = $service->createOption($request->getPost());
             if ($createdOption) {
-                return $this->redirect()->toRoute('activity_calendar', [], ['query' => ['success' => 'true']]);
+                return $this->redirect()->toRoute('Option\option_calendar', [], ['query' => ['success' => 'true']]);
 
             }
             $optionError = true;
@@ -41,7 +41,7 @@ class ActivityCalendarController extends AbstractActionController
         $request = $this->getRequest();
         if ($request->isPost()) {
             $service->deleteOption($request->getPost());
-            $this->redirect()->toRoute('activity_calendar');
+            $this->redirect()->toRoute('Option\option_calendar');
         }
     }
 
@@ -53,10 +53,10 @@ class ActivityCalendarController extends AbstractActionController
     /**
      * Get the activity calendar service
      *
-     * @return \Activity\Service\ActivityCalendar
+     * @return \Option\Service\ActivityCalendar
      */
     private function getActivityCalendarService()
     {
-        return $this->getServiceLocator()->get('activity_service_calendar');
+        return $this->getServiceLocator()->get('Option\option_service_calendar');
     }
 }

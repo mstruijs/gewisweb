@@ -1,8 +1,8 @@
 <?php
 
-namespace Activity\Mapper;
+namespace Option\Mapper;
 
-use Activity\Model\MaxActivityOptions as MaxActivityOptionsModel;
+use Option\Model\MaxActivityOptions as MaxActivityOptionsModel;
 use Decision\Model\Organ;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityRepository;
@@ -56,6 +56,6 @@ class MaxActivityOptions
      */
     public function getRepository()
     {
-        return $this->em->getRepository('Activity\Model\MaxActivityOptions');
+        return $this->em->getRepository('Option\Model\MaxActivityOptions');
     }
 }

@@ -1,10 +1,10 @@
 <?php
 
-namespace Activity\Service;
+namespace Option\Service;
 
-use Activity\Model\ActivityCalendarOption;
+use Option\Model\ActivityCalendarOption;
 use Application\Service\AbstractAclService;
-use Activity\Model\ActivityCalendarOption as OptionModel;
+use Option\Model\ActivityCalendarOption as OptionModel;
 
 class ActivityCalendar extends AbstractAclService
 {
@@ -45,7 +45,7 @@ class ActivityCalendar extends AbstractAclService
         $date->sub(new \DateInterval('P3W'));
         $oldOptions = $this->getActivityCalendarOptionMapper()->getPastOptions($date);
         if (!empty($oldOptions)) {
-            $this->getEmailService()->sendEmail('activity_calendar', 'email/options-overdue',
+            $this->getEmailService()->sendEmail('Option\option_calendar', 'email/options-overdue',
                 'Activiteiten kalender opties verlopen | Activity calendar options expired', ['options' => $oldOptions]);
         }
     }
@@ -65,17 +65,17 @@ class ActivityCalendar extends AbstractAclService
     /**
      * Get the activity calendar option mapper.
      *
-     * @return \Activity\Mapper\ActivityCalendarOption
+     * @return \Option\Mapper\ActivityCalendarOption
      */
     public function getActivityCalendarOptionMapper()
     {
-        return $this->sm->get('activity_mapper_calendar_option');
+        return $this->sm->get('Option\option_mapper_calendar_option');
     }
 
     /**
      * Retrieves the form for creating a new calendar option.
      *
-     * @return \Activity\Form\ActivityCalendarOption
+     * @return \Option\Form\ActivityCalendarOption
      */
     public function getCreateOptionForm()
     {
@@ -85,7 +85,7 @@ class ActivityCalendar extends AbstractAclService
             );
         }
 
-        return $this->sm->get('activity_form_calendar_option');
+        return $this->sm->get('Option\option_form_calendar_option');
     }
 
 
@@ -242,7 +242,7 @@ class ActivityCalendar extends AbstractAclService
      */
     protected function getDefaultResourceId()
     {
-        return 'activity_calendar_option';
+        return 'Option\option_calendar_option';
     }
 
     /**
@@ -252,6 +252,6 @@ class ActivityCalendar extends AbstractAclService
      */
     public function getAcl()
     {
-        return $this->sm->get('activity_acl');
+        return $this->sm->get('Option\option_acl');
     }
 }

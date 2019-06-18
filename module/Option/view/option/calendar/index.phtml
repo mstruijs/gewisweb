@@ -60,7 +60,7 @@ $form->prepare();
                         <span class="hidden-xs"><?= $this->translate('Add option') ?></span>
                     </button>
                     <div class="dropdown-menu">
-                        <form class="form" action="<?= $this->url('activity_calendar') ?>" method="post">
+                        <form class="form" action="<?= $this->url('Option\option_calendar') ?>" method="post">
                             <?php
                             $name = $form->get('name');
                             $name->setAttribute('class', 'form-control');

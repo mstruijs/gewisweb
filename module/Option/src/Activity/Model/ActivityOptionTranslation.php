@@ -1,11 +1,11 @@
 <?php
 
-namespace Activity\Model;
+namespace Option\Model;
 
 
 /**
  * Tranlated version of the ActivityOption model. Populate with values from an
- * instance of Activity\Model\ActivityOption, to only expose one language.
+ * instance of Option\Model\ActivityOption, to only expose one language.
  * This model should NOT be preserved in the database.
  */
 class ActivityOptionTranslation
@@ -28,7 +28,7 @@ class ActivityOptionTranslation
     /**
      * Set the field the option belongs to.
      *
-     * @param Activity\Model\ActivityField $field
+     * @param Option\Model\ActivityField $field
      */
     public function setField($field)
     {

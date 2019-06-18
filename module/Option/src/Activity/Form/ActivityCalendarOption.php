@@ -1,6 +1,6 @@
 <?php
 
-namespace Activity\Form;
+namespace Option\Form;
 
 use Decision\Model\Organ;
 use Zend\Form\Form;
@@ -75,7 +75,7 @@ class ActivityCalendarOption extends Form implements InputFilterProviderInterfac
                                 \Zend\Validator\Callback::INVALID_VALUE =>
                                     $this->translator->translate('The activity must start before it ends'),
                             ],
-                            'callback' => ['Activity\Form\ActivityCalendarOption', 'beforeEndTime']
+                            'callback' => ['Option\Form\ActivityCalendarOption', 'beforeEndTime']
                         ],
                     ],
                     [
@@ -85,7 +85,7 @@ class ActivityCalendarOption extends Form implements InputFilterProviderInterfac
                                 \Zend\Validator\Callback::INVALID_VALUE =>
                                     $this->translator->translate('The activity must after today'),
                             ],
-                            'callback' => ['Activity\Form\ActivityCalendarOption', 'isFutureTime']
+                            'callback' => ['Option\Form\ActivityCalendarOption', 'isFutureTime']
                         ],
                     ],
                 ]

@@ -1,6 +1,6 @@
 <?php
 
-namespace Activity\Mapper;
+namespace Option\Mapper;
 
 use Doctrine\ORM\EntityManager;
 
@@ -27,7 +27,7 @@ class ActivityOption
      * Finds the option of with the given id.
      * 
      * @param int $id
-     * @return \Activity\Model\ActivityOption
+     * @return \Option\Model\ActivityOption
      */
     public function getOptionById($id)
     {
@@ -42,6 +42,6 @@ class ActivityOption
      */
     public function getRepository()
     {
-        return $this->em->getRepository('Activity\Model\ActivityOption');
+        return $this->em->getRepository('Option\Model\ActivityOption');
     }
 }

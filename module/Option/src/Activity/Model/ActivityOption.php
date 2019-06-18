@@ -1,6 +1,6 @@
 <?php
 
-namespace Activity\Model;
+namespace Option\Model;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -46,7 +46,7 @@ class ActivityOption
     /**
      * Set the field the option belongs to.
      *
-     * @param Activity\Model\ActivityField $field
+     * @param Option\Model\ActivityField $field
      */
     public function setField($field)
     {

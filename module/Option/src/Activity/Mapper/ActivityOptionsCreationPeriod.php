@@ -1,8 +1,8 @@
 <?php
 
-namespace Activity\Mapper;
+namespace Option\Mapper;
 
-use Activity\Model\ActivityOptionsCreationPeriod as ActivityOptionsCreationPeriodModel;
+use Option\Model\ActivityOptionsCreationPeriod as ActivityOptionsCreationPeriodModel;
 use DateTime;
 use Decision\Model\Organ;
 use Doctrine\ORM\EntityManager;
@@ -52,7 +52,7 @@ class ActivityOptionsCreationPeriod
         $today = new DateTime();
 
         $qb->select('x')
-            ->from('Activity\Model\ActivityOptionsCreationPeriod', 'x')
+            ->from('Option\Model\ActivityOptionsCreationPeriod', 'x')
             ->where('x.beginTime < :today')
             ->where('x.endTime > :today')
             ->orderBy('x.beginTime', 'ASC')
@@ -75,7 +75,7 @@ class ActivityOptionsCreationPeriod
         $today = new DateTime();
 
         $qb->select('x')
-            ->from('Activity\Model\ActivityOptionsCreationPeriod', 'x')
+            ->from('Option\Model\ActivityOptionsCreationPeriod', 'x')
             ->where('x.beginTime > :today')
             ->orderBy('x.beginTime', 'ASC')
             ->setParameter('today', $today)
@@ -92,6 +92,6 @@ class ActivityOptionsCreationPeriod
      */
     public function getRepository()
     {
-        return $this->em->getRepository('Activity\Model\MaxActivityOptions');
+        return $this->em->getRepository('Option\Model\MaxActivityOptions');
     }
 }

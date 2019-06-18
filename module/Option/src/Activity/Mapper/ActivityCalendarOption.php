@@ -1,6 +1,6 @@
 <?php
 
-namespace Activity\Mapper;
+namespace Option\Mapper;
 
 use Doctrine\ORM\EntityManager;
 
@@ -28,7 +28,7 @@ class ActivityCalendarOption
      *
      * @param int $optionId Option id
      *
-     * @return \Activity\Model\ActivityCalendarOption
+     * @return \Option\Model\ActivityCalendarOption
      */
     public function find($optionId)
     {
@@ -47,7 +47,7 @@ class ActivityCalendarOption
     {
         $qb = $this->em->createQueryBuilder();
         $qb->select('a')
-            ->from('Activity\Model\ActivityCalendarOption', 'a')
+            ->from('Option\Model\ActivityCalendarOption', 'a')
             ->where('a.endTime > :now')
             ->andWhere('a.creator = :user OR a.organ IN (:organs)')
             ->orderBy('a.creationTime', 'ASC');
@@ -69,7 +69,7 @@ class ActivityCalendarOption
     {
         $qb = $this->em->createQueryBuilder();
         $qb->select('a')
-            ->from('Activity\Model\ActivityCalendarOption', 'a')
+            ->from('Option\Model\ActivityCalendarOption', 'a')
             ->where('a.endTime > :now')
             ->orderBy('a.creationTime', 'ASC');
 
@@ -92,7 +92,7 @@ class ActivityCalendarOption
     {
         $qb = $this->em->createQueryBuilder();
         $qb->select('a')
-            ->from('Activity\Model\ActivityCalendarOption', 'a')
+            ->from('Option\Model\ActivityCalendarOption', 'a')
             ->where('a.creationTime < :before')
             ->orderBy('a.creationTime', 'ASC');
 
@@ -115,7 +115,7 @@ class ActivityCalendarOption
     {
         $qb = $this->em->createQueryBuilder();
         $qb->select('a')
-            ->from('Activity\Model\ActivityCalendarOption', 'a')
+            ->from('Option\Model\ActivityCalendarOption', 'a')
             ->where('a.endTime > :now')
             ->andWhere('a.name LIKE :name')
             ->andWhere('a.deletedBy IS NULL')
@@ -127,7 +127,7 @@ class ActivityCalendarOption
     /**
      * Persist an option
      *
-     * @param \Activity\Model\ActivityCalendarOption $option
+     * @param \Option\Model\ActivityCalendarOption $option
      */
     public function persist($option)
     {
@@ -149,6 +149,6 @@ class ActivityCalendarOption
      */
     public function getRepository()
     {
-        return $this->em->getRepository('Activity\Model\ActivityCalendarOption');
+        return $this->em->getRepository('Option\Model\ActivityCalendarOption');
     }
 }
