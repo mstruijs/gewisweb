@@ -12,6 +12,19 @@ return [
                         'action' => 'index'
                     ],
                 ],
+                'may_terminate' => true,
+                'child_routes' => [
+                    'delete' => [
+                        'type' => 'Literal',
+                        'options' => [
+                            'route' => 'delete',
+                            'defaults' => [
+                                'action' => 'delete',
+                            ]
+                        ]
+                    ],
+                ]
+
             ],
         ],
     ],

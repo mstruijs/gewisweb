@@ -5,7 +5,7 @@ namespace Option\Controller;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 
-class CalendarController extends AbstractActionController
+class OptionCalendarController extends AbstractActionController
 {
 
     public function indexAction()
@@ -43,11 +43,6 @@ class CalendarController extends AbstractActionController
             $service->deleteOption($request->getPost());
             $this->redirect()->toRoute('Option\option_calendar');
         }
-    }
-
-    public function sendNotificationsAction()
-    {
-        $this->getActivityCalendarService()->sendOverdueNotifications();
     }
 
     /**
