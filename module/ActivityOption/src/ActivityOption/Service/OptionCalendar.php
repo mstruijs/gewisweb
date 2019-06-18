@@ -58,7 +58,7 @@ class OptionCalendar extends AbstractAclService
      */
     public function getActivityCalendarOptionMapper()
     {
-        return $this->sm->get('option_mapper_calendar_option');
+        return $this->sm->get('option_mapper_option');
     }
 
     /**
