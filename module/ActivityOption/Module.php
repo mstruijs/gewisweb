@@ -51,39 +51,39 @@ class Module
             'factories' => [
                 // fake 'alias' for entity manager, because doctrine uses an abstract factory
                 // and aliases don't work with abstract factories
-                'activity_doctrine_em' => function ($sm) {
+                'option_doctrine_em' => function ($sm) {
                     return $sm->get('doctrine.entitymanager.orm_default');
                 },
-                'activity_form_calendar_option' => function ($sm) {
+                'option_form_calendar_option' => function ($sm) {
                     $organService = $sm->get('decision_service_organ');
                     $organs = $organService->getEditableOrgans();
                     $form = new Form\ActivityCalendarOption($organs, $sm->get('translator'));
                     $form->setHydrator($sm->get('activity_hydrator_calendar_option'));
                     return $form;
                 },
-                'activity_hydrator_calendar_option' => function ($sm) {
+                'option_hydrator_calendar_option' => function ($sm) {
                     return new \DoctrineModule\Stdlib\Hydrator\DoctrineObject(
                         $sm->get('activity_doctrine_em'),
                         'Activity\Model\ActivityCalendarOption'
                     );
                 },
-                'activity_hydrator' => function ($sm) {
+                'option_hydrator' => function ($sm) {
                     return new \DoctrineModule\Stdlib\Hydrator\DoctrineObject(
                         $sm->get('activity_doctrine_em')
                     );
                 },
-                'activity_service_calendar' => function ($sm) {
+                'option_service_calendar' => function ($sm) {
                     $ac = new Service\ActivityCalendar();
                     $ac->setServiceManager($sm);
 
                     return $ac;
                 },
-                'activity_mapper_calendar_option' => function ($sm) {
+                'option_mapper_calendar_option' => function ($sm) {
                     return new \Activity\Mapper\ActivityCalendarOption(
                         $sm->get('activity_doctrine_em')
                     );
                 },
-                'activity_acl' => function ($sm) {
+                'option_acl' => function ($sm) {
                     $acl = $sm->get('acl');
                     $acl->addResource('activity_option');
 
