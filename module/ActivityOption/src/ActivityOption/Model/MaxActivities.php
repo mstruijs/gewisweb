@@ -1,5 +1,5 @@
 <?php
-namespace Activity\Model;
+namespace ActivityOption\Model;
 use Decision\Model\Organ;
 use Doctrine\ORM\Mapping as ORM;
 /**

@@ -58,18 +58,18 @@ class Module
                     $organService = $sm->get('decision_service_organ');
                     $organs = $organService->getEditableOrgans();
                     $form = new Form\ActivityCalendarOption($organs, $sm->get('translator'));
-                    $form->setHydrator($sm->get('activity_hydrator_calendar_option'));
+                    $form->setHydrator($sm->get('option_hydrator_calendar_option'));
                     return $form;
                 },
                 'option_hydrator_calendar_option' => function ($sm) {
                     return new \DoctrineModule\Stdlib\Hydrator\DoctrineObject(
-                        $sm->get('activity_doctrine_em'),
-                        'Activity\Model\Option'
+                        $sm->get('option_doctrine_em'),
+                        'Option\Model\Option'
                     );
                 },
                 'option_hydrator' => function ($sm) {
                     return new \DoctrineModule\Stdlib\Hydrator\DoctrineObject(
-                        $sm->get('activity_doctrine_em')
+                        $sm->get('option_doctrine_em')
                     );
                 },
                 'option_service_calendar' => function ($sm) {
@@ -79,8 +79,8 @@ class Module
                     return $ac;
                 },
                 'option_mapper_calendar_option' => function ($sm) {
-                    return new \Activity\Mapper\Option(
-                        $sm->get('activity_doctrine_em')
+                    return new Mapper\Option(
+                        $sm->get('option_doctrine_em')
                     );
                 },
                 'option_acl' => function ($sm) {
