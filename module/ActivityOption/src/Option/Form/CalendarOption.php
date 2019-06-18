@@ -1,6 +1,6 @@
 <?php
 
-namespace Option\Form;
+namespace ActivityOption\Form;
 
 use Decision\Model\Organ;
 use Zend\Form\Form;

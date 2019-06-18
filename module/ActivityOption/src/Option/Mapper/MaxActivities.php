@@ -1,6 +1,6 @@
 <?php
 
-namespace Option\Mapper;
+namespace ActivityOption\Mapper;
 
 use Option\Model\MaxActivityOptions as MaxActivityOptionsModel;
 use Decision\Model\Organ;

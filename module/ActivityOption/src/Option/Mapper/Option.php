@@ -1,6 +1,6 @@
 <?php
 
-namespace Option\Mapper;
+namespace ActivityOption\Mapper;
 
 use Doctrine\ORM\EntityManager;
 

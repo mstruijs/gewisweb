@@ -1,6 +1,6 @@
 <?php
 
-namespace Option\Service;
+namespace ActivityOption\Service;
 
 use Option\Model\Option;
 use Application\Service\AbstractAclService;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Option\Controller;
+namespace ActivityOption\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;

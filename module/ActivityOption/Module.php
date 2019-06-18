@@ -1,11 +1,5 @@
 <?php
-namespace Option;
-
-use Activity\Form\ActivityCalendarOption;
-use Activity\Service\ActivityCalendar;
-use Activity\Service\Signup;
-use User\Permissions\Assertion\IsCreator;
-use User\Permissions\Assertion\IsOrganMember;
+namespace ActivityOption;
 
 class Module
 {
@@ -91,24 +85,9 @@ class Module
                 },
                 'activity_acl' => function ($sm) {
                     $acl = $sm->get('acl');
-                    $acl->addResource('option');
+                    $acl->addResource('activity_option');
 
-                    $acl->allow('user', 'activity', 'create');
-                    $acl->allow('user', 'myActivities', 'view');
-                    $acl->allow('user', 'activitySignup', ['view', 'signup', 'signoff', 'checkUserSignedUp']);
-
-                    $acl->allow('admin', 'activity', ['update', 'viewDetails', 'adminSignup']);
-                    $acl->allow('user', 'activity', ['update', 'viewDetails', 'adminSignup'], new IsCreator());
-                    $acl->allow(
-                        'active_member',
-                        'activity',
-                        ['update', 'viewDetails', 'adminSignup'],
-                        new IsOrganMember()
-                    );
-
-                    $acl->allow('sosuser', 'activitySignup', ['signup', 'signoff', 'checkUserSignedUp']);
-
-                    $acl->allow('user', 'option', ['create', 'delete_own']);
+                    $acl->allow('user', 'activity_option', ['create', 'delete_own']);
                     return $acl;
                 },
             ]

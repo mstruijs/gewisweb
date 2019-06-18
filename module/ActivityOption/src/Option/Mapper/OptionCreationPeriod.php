@@ -1,6 +1,6 @@
 <?php
 
-namespace Option\Mapper;
+namespace ActivityOption\Mapper;
 
 use Option\Model\OptionCreationPeriod as ActivityOptionsCreationPeriodModel;
 use DateTime;

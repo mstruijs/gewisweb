@@ -1,6 +1,6 @@
 <?php
 
-namespace Option\Model;
+namespace ActivityOption\Model;
 
 use DateTime;
 use Doctrine\ORM\Mapping as ORM;
