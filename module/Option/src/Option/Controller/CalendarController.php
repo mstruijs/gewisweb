@@ -53,7 +53,7 @@ class CalendarController extends AbstractActionController
     /**
      * Get the activity calendar service
      *
-     * @return \Option\Service\ActivityCalendar
+     * @return \Option\Service\OptionCalendar
      */
     private function getActivityCalendarService()
     {

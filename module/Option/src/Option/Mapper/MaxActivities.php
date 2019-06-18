@@ -56,6 +56,6 @@ class MaxActivities
      */
     public function getRepository()
     {
-        return $this->em->getRepository('Option\Model\MaxActivityOptions');
+        return $this->em->getRepository('Option\Model\MaxActivities');
     }
 }

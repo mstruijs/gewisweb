@@ -12,18 +12,6 @@ return [
                         'action' => 'index'
                     ],
                 ],
-                'may_terminate' => true,
-                'child_routes' => [
-                    'delete' => [
-                        'type' => 'Literal',
-                        'options' => [
-                            'route' => 'delete',
-                            'defaults' => [
-                                'action' => 'delete',
-                            ]
-                        ]
-                    ],
-                ]
             ],
         ],
     ],
@@ -37,7 +25,7 @@ return [
             'Option\option_entities' => [
                 'class' => 'Doctrine\ORM\Mapping\Driver\AnnotationDriver',
                 'cache' => 'array',
-                'paths' => [__DIR__ . '/../src/Activity/Model/']
+                'paths' => [__DIR__ . '/../src/Option/Model/']
             ],
             'orm_default' => [
                 'drivers' => [

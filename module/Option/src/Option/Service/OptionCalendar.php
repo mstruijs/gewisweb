@@ -6,7 +6,7 @@ use Option\Model\Option;
 use Application\Service\AbstractAclService;
 use Option\Model\Option as OptionModel;
 
-class ActivityCalendar extends AbstractAclService
+class OptionCalendar extends AbstractAclService
 {
 
     /**
@@ -37,17 +37,6 @@ class ActivityCalendar extends AbstractAclService
             $this->getMemberMapper()->findOrgans($user->getMember()),
             $user
         );
-    }
-
-    public function sendOverdueNotifications()
-    {
-        $date = new \DateTime();
-        $date->sub(new \DateInterval('P3W'));
-        $oldOptions = $this->getActivityCalendarOptionMapper()->getPastOptions($date);
-        if (!empty($oldOptions)) {
-            $this->getEmailService()->sendEmail('Option\option_calendar', 'email/options-overdue',
-                'Activiteiten kalender opties verlopen | Activity calendar options expired', ['options' => $oldOptions]);
-        }
     }
 
     /**
