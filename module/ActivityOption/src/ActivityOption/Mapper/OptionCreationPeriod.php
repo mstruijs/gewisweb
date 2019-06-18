@@ -2,7 +2,7 @@
 
 namespace ActivityOption\Mapper;
 
-use Option\Model\OptionCreationPeriod as ActivityOptionsCreationPeriodModel;
+use Option\Model\OptionCreationPeriod as OptionCreationPeriodModel;
 use DateTime;
 use Decision\Model\Organ;
 use Doctrine\ORM\EntityManager;
@@ -29,23 +29,23 @@ class OptionCreationPeriod
     }
 
     /**
-     * Finds the ActivityOptionsCreationPeriod model with the given id.
+     * Finds the OptionCreationPeriod model with the given id.
      *
      * @param int $id
-     * @return ActivityOptionsCreationPeriodModel
+     * @return OptionCreationPeriodModel
      */
-    public function getActivityOptionsCreationPeriodById($id)
+    public function getOptionCreationPeriodById($id)
     {
         return $this->getRepository()->find($id);
     }
 
     /**
-     * Finds the ActivityOptionsCreationPeriod model that is currently active
+     * Finds the OptionCreationPeriod model that is currently active
      *
      * @return OptionCreationPeriod
      * @throws Exception
      */
-    public function getCurrentActivityOptionsCreationPeriod()
+    public function getCurrentOptionCreationPeriod()
     {
         $qb = $this->em->createQueryBuilder();
 
@@ -63,12 +63,12 @@ class OptionCreationPeriod
     }
 
     /**
-     * Finds the ActivityOptionsCreationPeriod model that will be active next
+     * Finds the OptionCreationPeriod model that will be active next
      *
      * @return OptionCreationPeriod
      * @throws Exception
      */
-    public function getUpcomingActivityOptionsCreationPeriod()
+    public function getUpcomingOptionCreationPeriod()
     {
         $qb = $this->em->createQueryBuilder();
 

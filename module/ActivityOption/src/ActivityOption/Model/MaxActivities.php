@@ -35,7 +35,7 @@ class MaxActivities
     /**
      * The associated period
      *
-     * @ORM\Column(type="Activity\Model\ActivityOptionsCreationPeriod", nullable=false)
+     * @ORM\Column(type="ActivityOption\Model\OptionCreationPeriod", nullable=false)
      */
     protected $period;
     /**
@@ -46,7 +46,7 @@ class MaxActivities
         return $this->id;
     }
     /**
-     * @return ActivityOptionsCreationPeriod
+     * @return OptionCreationPeriod
      */
     public function getPeriod()
     {
@@ -87,7 +87,7 @@ class MaxActivities
     /**
      * Set the period
      *
-     * @param ActivityOptionsCreationPeriod $period
+     * @param OptionCreationPeriod $period
      */
     public function setPeriod($period)
     {
