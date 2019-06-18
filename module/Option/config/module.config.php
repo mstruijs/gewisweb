@@ -1,21 +1,17 @@
 <?php
 return [
-    'controllers' => [
-        'invokables' => [
-            'Option\Controller\OptionCalendar' => 'Option\Controller\OptionCalendarController',
-        ],
-    ],
     'router' => [
         'routes' => [
             'option' => [
                 'type' => 'Literal',
+                'priority' => 100,
+                'may_terminate' => true,
                 'options' => [
                     'route' => '/option',
                     'defaults' => [
                         '__NAMESPACE__' => 'Option\Controller',
                     ],
                 ],
-                'may_terminate' => true,
                 'child_routes' => [
                     'calendar' => [
                         'type' => 'Literal',
@@ -28,13 +24,13 @@ return [
                         ],
                     ],
                 ],
-                'may_terminate' => true,
                 'child_routes' => [
                     'delete' => [
                         'type' => 'Literal',
                         'options' => [
                             'route' => 'delete',
                             'defaults' => [
+                                'controller' => 'optionCalendar',
                                 'action' => 'delete',
                             ]
                         ]
@@ -42,6 +38,11 @@ return [
                 ]
 
             ],
+        ],
+    ],
+    'controllers' => [
+        'invokables' => [
+            'Option\Controller\OptionCalendar' => 'Option\Controller\OptionCalendarController',
         ],
     ],
     'view_manager' => [
