@@ -1,5 +1,10 @@
 <?php
 return [
+    'controllers' => [
+        'invokables' => [
+            'Option\Controller\OptionCalendar' => 'Option\Controller\OptionCalendarController',
+        ],
+    ],
     'router' => [
         'routes' => [
             'option_calendar' => [
