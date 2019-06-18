@@ -7,14 +7,25 @@ return [
     ],
     'router' => [
         'routes' => [
-            'option_calendar' => [
+            'option' => [
                 'type' => 'Literal',
                 'options' => [
-                    'route' => '/option/calendar/',
+                    'route' => '/option',
                     'defaults' => [
                         '__NAMESPACE__' => 'Option\Controller',
-                        'controller' => 'optionCalendar',
-                        'action' => 'index'
+                    ],
+                ],
+                'may_terminate' => true,
+                'child_routes' => [
+                    'calendar' => [
+                        'type' => 'Literal',
+                        'options' => [
+                            'route' => '/calendar',
+                            'defaults' => [
+                                'controller' => 'optionCalendar',
+                                'action' => 'index'
+                            ],
+                        ],
                     ],
                 ],
                 'may_terminate' => true,
