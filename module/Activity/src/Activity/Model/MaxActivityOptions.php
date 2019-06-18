@@ -2,11 +2,13 @@
 
 namespace Activity\Model;
 
+use Decision\Model\Organ;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Max Activity options model.
  * Contains the max amount of activities an organ may create options for
+ * Note that this is the limit per period!
  *
  * @ORM\Entity
  */
@@ -37,6 +39,55 @@ class MaxActivityOptions
     protected $value;
 
     /**
+     * The associated period
+     *
+     * @ORM\Column(type="Activity\Model\ActivityOptionsCreationPeriod", nullable=false)
+     */
+    protected $period;
+
+    /**
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @return ActivityOptionsCreationPeriod
+     */
+    public function getPeriod()
+    {
+        return $this->period;
+    }
+
+    /**
+     * @return Organ
+     */
+    public function getOrgan()
+    {
+        return $this->organ;
+    }
+
+    /**
+     * @return int
+     */
+    public function getValue()
+    {
+        return $this->value;
+    }
+
+    /**
+     * Set the organ
+     *
+     * @param Organ $organ
+     */
+    public function setOrgan($organ)
+    {
+        $this->organ = $organ;
+    }
+
+    /**
      * Set the value
      *
      * @param int $value
@@ -47,30 +98,13 @@ class MaxActivityOptions
     }
 
     /**
-     * Set the organ
+     * Set the period
      *
-     * @param \Decision\Model\Organ $organ
+     * @param ActivityOptionsCreationPeriod $period
      */
-    public function setOrgan($organ)
+    public function setPeriod($period)
     {
-        $this->organ = $organ;
-    }
-
-
-    public function getId()
-    {
-        return $this->id;
-    }
-
-
-    public function getOrgan()
-    {
-        return $this->organ;
-    }
-
-    public function getValue()
-    {
-        return $this->value;
+        $this->period = $period;
     }
 
     /**
