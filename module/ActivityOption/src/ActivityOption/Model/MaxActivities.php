@@ -35,7 +35,7 @@ class MaxActivities
     /**
      * The associated period
      *
-     * @ORM\Column(type="ActivityOption\Model\OptionCreationPeriod", nullable=false)
+     * @ORM\ManyToOne(type="ActivityOption\Model\OptionCreationPeriod", nullable=false)
      */
     protected $period;
     /**
