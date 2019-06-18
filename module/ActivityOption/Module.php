@@ -64,7 +64,7 @@ class Module
                 'option_hydrator_calendar_option' => function ($sm) {
                     return new \DoctrineModule\Stdlib\Hydrator\DoctrineObject(
                         $sm->get('option_doctrine_em'),
-                        'Option\Model\Option'
+                        'AcitivityOption\Model\Option'
                     );
                 },
                 'option_hydrator' => function ($sm) {

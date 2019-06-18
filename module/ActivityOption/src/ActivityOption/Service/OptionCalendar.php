@@ -231,7 +231,7 @@ class OptionCalendar extends AbstractAclService
      */
     protected function getDefaultResourceId()
     {
-        return 'Option\option_calendar_option';
+        return 'AcitivityOption\option_calendar_option';
     }
 
     /**

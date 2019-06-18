@@ -75,7 +75,7 @@ class CalendarOption extends Form implements InputFilterProviderInterface
                                 \Zend\Validator\Callback::INVALID_VALUE =>
                                     $this->translator->translate('The activity must start before it ends'),
                             ],
-                            'callback' => ['Option\Form\CalendarOption', 'beforeEndTime']
+                            'callback' => ['AcitivityOption\Form\CalendarOption', 'beforeEndTime']
                         ],
                     ],
                     [
@@ -85,7 +85,7 @@ class CalendarOption extends Form implements InputFilterProviderInterface
                                 \Zend\Validator\Callback::INVALID_VALUE =>
                                     $this->translator->translate('The activity must after today'),
                             ],
-                            'callback' => ['Option\Form\CalendarOption', 'isFutureTime']
+                            'callback' => ['AcitivityOption\Form\CalendarOption', 'isFutureTime']
                         ],
                     ],
                 ]

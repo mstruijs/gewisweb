@@ -47,7 +47,7 @@ class Option
     {
         $qb = $this->em->createQueryBuilder();
         $qb->select('a')
-            ->from('Option\Model\Option', 'a')
+            ->from('AcitivityOption\Model\Option', 'a')
             ->where('a.endTime > :now')
             ->andWhere('a.creator = :user OR a.organ IN (:organs)')
             ->orderBy('a.creationTime', 'ASC');
@@ -69,7 +69,7 @@ class Option
     {
         $qb = $this->em->createQueryBuilder();
         $qb->select('a')
-            ->from('Option\Model\Option', 'a')
+            ->from('AcitivityOption\Model\Option', 'a')
             ->where('a.endTime > :now')
             ->orderBy('a.creationTime', 'ASC');
 
@@ -92,7 +92,7 @@ class Option
     {
         $qb = $this->em->createQueryBuilder();
         $qb->select('a')
-            ->from('Option\Model\Option', 'a')
+            ->from('AcitivityOption\Model\Option', 'a')
             ->where('a.creationTime < :before')
             ->orderBy('a.creationTime', 'ASC');
 
@@ -115,7 +115,7 @@ class Option
     {
         $qb = $this->em->createQueryBuilder();
         $qb->select('a')
-            ->from('Option\Model\Option', 'a')
+            ->from('AcitivityOption\Model\Option', 'a')
             ->where('a.endTime > :now')
             ->andWhere('a.name LIKE :name')
             ->andWhere('a.deletedBy IS NULL')
@@ -149,6 +149,6 @@ class Option
      */
     public function getRepository()
     {
-        return $this->em->getRepository('Option\Model\Option');
+        return $this->em->getRepository('AcitivityOption\Model\Option');
     }
 }

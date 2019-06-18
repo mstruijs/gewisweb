@@ -52,7 +52,7 @@ class OptionCreationPeriod
         $today = new DateTime();
 
         $qb->select('x')
-            ->from('Option\Model\OptionCreationPeriod', 'x')
+            ->from('AcitivityOption\Model\OptionCreationPeriod', 'x')
             ->where('x.beginTime < :today')
             ->where('x.endTime > :today')
             ->orderBy('x.beginTime', 'ASC')
@@ -75,7 +75,7 @@ class OptionCreationPeriod
         $today = new DateTime();
 
         $qb->select('x')
-            ->from('Option\Model\OptionCreationPeriod', 'x')
+            ->from('AcitivityOption\Model\OptionCreationPeriod', 'x')
             ->where('x.beginTime > :today')
             ->orderBy('x.beginTime', 'ASC')
             ->setParameter('today', $today)
@@ -92,6 +92,6 @@ class OptionCreationPeriod
      */
     public function getRepository()
     {
-        return $this->em->getRepository('Option\Model\MaxActivityOptions');
+        return $this->em->getRepository('AcitivityOption\Model\MaxActivityOptions');
     }
 }
