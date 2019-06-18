@@ -43,7 +43,7 @@ class MaxActivityOptions
      * @param Organ $organ
      * @return MaxActivityOptionsModel
      */
-    public function getMaxActivityOptionsByORgan($organ)
+    public function getMaxActivityOptionsByOrgan($organ)
     {
         return $this->getRepository()->find($organ);
     }
