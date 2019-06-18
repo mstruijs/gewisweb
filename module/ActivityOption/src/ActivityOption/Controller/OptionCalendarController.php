@@ -52,6 +52,6 @@ class OptionCalendarController extends AbstractActionController
      */
     private function getActivityCalendarService()
     {
-        return $this->getServiceLocator()->get('option\option_service_calendar');
+        return $this->getServiceLocator()->get('option_service_calendar');
     }
 }
