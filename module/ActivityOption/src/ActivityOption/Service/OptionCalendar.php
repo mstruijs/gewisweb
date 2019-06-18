@@ -58,7 +58,7 @@ class OptionCalendar extends AbstractAclService
      */
     public function getActivityCalendarOptionMapper()
     {
-        return $this->sm->get('Option\option_mapper_calendar_option');
+        return $this->sm->get('option_mapper_calendar_option');
     }
 
     /**
@@ -74,7 +74,7 @@ class OptionCalendar extends AbstractAclService
             );
         }
 
-        return $this->sm->get('Option\option_form_calendar_option');
+        return $this->sm->get('option_form_calendar_option');
     }
 
 
@@ -241,6 +241,6 @@ class OptionCalendar extends AbstractAclService
      */
     public function getAcl()
     {
-        return $this->sm->get('Option\option_acl');
+        return $this->sm->get('option_acl');
     }
 }
