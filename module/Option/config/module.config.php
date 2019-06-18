@@ -23,12 +23,10 @@ return [
                             ],
                         ],
                     ],
-                ],
-                'child_routes' => [
                     'delete' => [
                         'type' => 'Literal',
                         'options' => [
-                            'route' => 'delete',
+                            'route' => '/delete',
                             'defaults' => [
                                 'controller' => 'optionCalendar',
                                 'action' => 'delete',
