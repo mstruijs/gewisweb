@@ -2,9 +2,9 @@
 
 namespace Option\Service;
 
-use Option\Model\ActivityCalendarOption;
+use Option\Model\Option;
 use Application\Service\AbstractAclService;
-use Option\Model\ActivityCalendarOption as OptionModel;
+use Option\Model\Option as OptionModel;
 
 class ActivityCalendar extends AbstractAclService
 {
@@ -65,7 +65,7 @@ class ActivityCalendar extends AbstractAclService
     /**
      * Get the activity calendar option mapper.
      *
-     * @return \Option\Mapper\ActivityCalendarOption
+     * @return \Option\Mapper\Option
      */
     public function getActivityCalendarOptionMapper()
     {
@@ -75,7 +75,7 @@ class ActivityCalendar extends AbstractAclService
     /**
      * Retrieves the form for creating a new calendar option.
      *
-     * @return \Option\Form\ActivityCalendarOption
+     * @return \Option\Form\CalendarOption
      */
     public function getCreateOptionForm()
     {
@@ -127,7 +127,7 @@ class ActivityCalendar extends AbstractAclService
 
     /**
      * Check if not too many options have been created
-     * @param ActivityCalendarOption $newOption the new option to be created
+     * @param Option $newOption the new option to be created
      * @return bool indicating whether too many options have been created.
      */
     protected function optionLimitsExceeded($newOption)

@@ -7,7 +7,7 @@ use Zend\Form\Form;
 use Zend\Mvc\I18n\Translator;
 use Zend\InputFilter\InputFilterProviderInterface;
 
-class ActivityCalendarOption extends Form implements InputFilterProviderInterface
+class CalendarOption extends Form implements InputFilterProviderInterface
 {
     protected $translator;
 
@@ -75,7 +75,7 @@ class ActivityCalendarOption extends Form implements InputFilterProviderInterfac
                                 \Zend\Validator\Callback::INVALID_VALUE =>
                                     $this->translator->translate('The activity must start before it ends'),
                             ],
-                            'callback' => ['Option\Form\ActivityCalendarOption', 'beforeEndTime']
+                            'callback' => ['Option\Form\CalendarOption', 'beforeEndTime']
                         ],
                     ],
                     [
@@ -85,7 +85,7 @@ class ActivityCalendarOption extends Form implements InputFilterProviderInterfac
                                 \Zend\Validator\Callback::INVALID_VALUE =>
                                     $this->translator->translate('The activity must after today'),
                             ],
-                            'callback' => ['Option\Form\ActivityCalendarOption', 'isFutureTime']
+                            'callback' => ['Option\Form\CalendarOption', 'isFutureTime']
                         ],
                     ],
                 ]

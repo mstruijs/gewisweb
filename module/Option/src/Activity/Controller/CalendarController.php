@@ -5,7 +5,7 @@ namespace Option\Controller;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 
-class ActivityCalendarController extends AbstractActionController
+class CalendarController extends AbstractActionController
 {
 
     public function indexAction()

@@ -2,14 +2,14 @@
 
 namespace Option\Mapper;
 
-use Option\Model\ActivityOptionsCreationPeriod as ActivityOptionsCreationPeriodModel;
+use Option\Model\OptionCreationPeriod as ActivityOptionsCreationPeriodModel;
 use DateTime;
 use Decision\Model\Organ;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityRepository;
 use Exception;
 
-class ActivityOptionsCreationPeriod
+class OptionCreationPeriod
 {
     /**
      * Doctrine entity manager.
@@ -42,7 +42,7 @@ class ActivityOptionsCreationPeriod
     /**
      * Finds the ActivityOptionsCreationPeriod model that is currently active
      *
-     * @return ActivityOptionsCreationPeriod
+     * @return OptionCreationPeriod
      * @throws Exception
      */
     public function getCurrentActivityOptionsCreationPeriod()
@@ -52,7 +52,7 @@ class ActivityOptionsCreationPeriod
         $today = new DateTime();
 
         $qb->select('x')
-            ->from('Option\Model\ActivityOptionsCreationPeriod', 'x')
+            ->from('Option\Model\OptionCreationPeriod', 'x')
             ->where('x.beginTime < :today')
             ->where('x.endTime > :today')
             ->orderBy('x.beginTime', 'ASC')
@@ -65,7 +65,7 @@ class ActivityOptionsCreationPeriod
     /**
      * Finds the ActivityOptionsCreationPeriod model that will be active next
      *
-     * @return ActivityOptionsCreationPeriod
+     * @return OptionCreationPeriod
      * @throws Exception
      */
     public function getUpcomingActivityOptionsCreationPeriod()
@@ -75,7 +75,7 @@ class ActivityOptionsCreationPeriod
         $today = new DateTime();
 
         $qb->select('x')
-            ->from('Option\Model\ActivityOptionsCreationPeriod', 'x')
+            ->from('Option\Model\OptionCreationPeriod', 'x')
             ->where('x.beginTime > :today')
             ->orderBy('x.beginTime', 'ASC')
             ->setParameter('today', $today)

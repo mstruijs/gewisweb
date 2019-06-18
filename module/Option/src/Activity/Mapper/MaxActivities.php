@@ -7,7 +7,7 @@ use Decision\Model\Organ;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityRepository;
 
-class MaxActivityOptions
+class MaxActivities
 {
     /**
      * Doctrine entity manager.
