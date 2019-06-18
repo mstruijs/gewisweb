@@ -46,7 +46,7 @@ return [
     ],
     'view_manager' => [
         'template_path_stack' => [
-            'activity' => __DIR__ . '/../view/'
+            'option' => __DIR__ . '/../view/'
         ]
     ],
     'doctrine' => [
