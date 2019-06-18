@@ -50,7 +50,7 @@ return [
     ],
     'doctrine' => [
         'driver' => [
-            'Option\option_entities' => [
+            'ActivityOption\option_entities' => [
                 'class' => 'Doctrine\ORM\Mapping\Driver\AnnotationDriver',
                 'cache' => 'array',
                 'paths' => [__DIR__ . '/../src/ActivityOption/Model/']

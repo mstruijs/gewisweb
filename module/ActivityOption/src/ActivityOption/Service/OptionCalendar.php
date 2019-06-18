@@ -54,7 +54,7 @@ class OptionCalendar extends AbstractAclService
     /**
      * Get the activity calendar option mapper.
      *
-     * @return \Option\Mapper\Option
+     * @return \ActivityOption\Mapper\Option
      */
     public function getActivityCalendarOptionMapper()
     {
@@ -64,7 +64,7 @@ class OptionCalendar extends AbstractAclService
     /**
      * Retrieves the form for creating a new calendar option.
      *
-     * @return \Option\Form\CalendarOption
+     * @return \ActivityOption\Form\CalendarOption
      */
     public function getCreateOptionForm()
     {

@@ -28,7 +28,7 @@ class Option
      *
      * @param int $optionId Option id
      *
-     * @return \Option\Model\Option
+     * @return \ActivityOption\Model\Option
      */
     public function find($optionId)
     {
@@ -127,7 +127,7 @@ class Option
     /**
      * Persist an option
      *
-     * @param \Option\Model\Option $option
+     * @param \ActivityOption\Model\Option $option
      */
     public function persist($option)
     {

@@ -17,7 +17,7 @@ class OptionCalendarController extends AbstractActionController
         if ($request->isPost()) {
             $createdOption = $service->createOption($request->getPost());
             if ($createdOption) {
-                return $this->redirect()->toRoute('Option\option_calendar', [], ['query' => ['success' => 'true']]);
+                return $this->redirect()->toRoute('ActivityOption\option_calendar', [], ['query' => ['success' => 'true']]);
 
             }
             $optionError = true;
@@ -41,17 +41,17 @@ class OptionCalendarController extends AbstractActionController
         $request = $this->getRequest();
         if ($request->isPost()) {
             $service->deleteOption($request->getPost());
-            $this->redirect()->toRoute('Option\option_calendar');
+            $this->redirect()->toRoute('ActivityOption\option_calendar');
         }
     }
 
     /**
      * Get the activity calendar service
      *
-     * @return \Option\Service\OptionCalendar
+     * @return \ActivityOption\Service\OptionCalendar
      */
     private function getActivityCalendarService()
     {
-        return $this->getServiceLocator()->get('Option\option_service_calendar');
+        return $this->getServiceLocator()->get('ActivityOption\option_service_calendar');
     }
 }
