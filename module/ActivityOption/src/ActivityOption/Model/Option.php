@@ -194,7 +194,6 @@ class Option implements OrganResourceInterface
         $this->organ = $organ;
     }
 
-
     /**
      * Get the organ of this resource.
      *

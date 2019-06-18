@@ -29,7 +29,7 @@ class MaxActivities
     /**
      * The value of the option.
      *
-     * @ORM\Column(type="int", nullable=false)
+     * @ORM\Column(type="integer", nullable=false)
      */
     protected $value;
     /**
