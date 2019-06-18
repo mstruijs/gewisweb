@@ -49,7 +49,7 @@ class MaxActivityOptions
     /**
      * Set the organ
      *
-     * @param Decision\Model\Organ $organ
+     * @param \Decision\Model\Organ $organ
      */
     public function setOrgan($organ)
     {
